@@ -28,7 +28,7 @@ function HistoryDialog({ label, isOpen, isClose, data }) {
             onClose={isClose}
             PaperProps={{
                 sx: {
-                    width: 800,
+                    width: 900,
                     maxWidth: '90%'  // ป้องกันล้นจอ
                 },
             }}
