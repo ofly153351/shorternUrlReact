@@ -8,7 +8,7 @@ function Reports() {
         try {
             const FetchData = async () => {
                 const res = await getAllclick()
-                console.log(res);
+                console.log("reports", res.data);
             }
             FetchData()
         } catch (error) {
@@ -26,7 +26,7 @@ function Reports() {
     ];
     return (
         <div className="w-full  flex justify-center items-center   pb-10 ">
-            <div className="w-[150px] flex justify-around items-center max-w-xl bg-white rounded-lg shadow-lg p-2">
+            <div className="w-full flex justify-around items-center max-w-xl bg-white rounded-lg shadow-lg p-2">
                 {labelReport.map((item, index) => (
                     <ReportsCard key={index} label={item.name} data={item.value} />
                 ))}
