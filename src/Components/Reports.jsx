@@ -14,9 +14,9 @@ function Reports() {
             try {
                 const res = await getAllclick();
                 console.log("reports", res);
-                setTotalLinksToday(res?.data?.totalLinksToday)
-                setTotlaLinks(res?.data?.totalLinks)
-                setTotalClicks(res?.data?.totalClicks)
+                setTotalLinksToday(res?.totalLinksToday)
+                setTotlaLinks(res?.totalLinks)
+                setTotalClicks(res?.totalClicks)
 
                 if (res) {
                     setLoadingReport(false)
