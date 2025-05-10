@@ -9,6 +9,8 @@ import { useStore } from '../../useStore/useStore';
 function HistoryTable({ data }) {
     const { user } = useStore()
 
+    const [data, setData] = useState([]);
+    
     return (
         <TableContainer component={Paper}>
             <Table aria-label="history table">
@@ -33,6 +35,11 @@ function HistoryTable({ data }) {
                                             e.preventDefault();
                                             await incrementLinkcount(row.afterLink, user.userId);
                                             window.open(row.afterLink, '_blank');
+                                            setData(prev =>
+                                                prev.map((item, i) =>
+                                                    i === index ? { ...item, Clicked: item.Clicked + 1 } : item
+                                                )
+                                            );
                                         }}
                                     >
                                         {row.afterLink}
