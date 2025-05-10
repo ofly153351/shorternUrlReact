@@ -59,9 +59,7 @@ function NewDialog({ label, openform, isOpen, isClose }) {
                     } catch (error) {
                         console.log(error);
                         alert('Register fail')
-
                     }
-
                 }
                 Fetchdata();
             }

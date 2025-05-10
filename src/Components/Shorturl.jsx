@@ -94,7 +94,7 @@ function Shorturl() {
     }, [beforeUrl]);
 
     return (
-        <div className="w-full flex justify-center items-center min-h-screen pt-20  ">
+        <div className="w-full flex justify-center items-center min-h-screen pt-20  pb-5">
             <div className="w-full max-w-xl bg-white rounded-lg shadow-lg p-8">
                 <h2 className="text-2xl font-bold mb-6 text-center">Create your short URL!</h2>
                 <div className="flex mb-4">
