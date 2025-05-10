@@ -1,7 +1,9 @@
 import React from 'react';
+
 import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 } from '@mui/material';
+import { incrementLinkcount } from '../../Util/api';
 
 function HistoryTable({ data }) {
     return (
