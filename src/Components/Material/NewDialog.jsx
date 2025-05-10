@@ -50,19 +50,15 @@ function NewDialog({ label, openform, isOpen, isClose }) {
                     userName: formData.Username,
                     password: formData.Password
                 }
-
-                // console.log(payload);
-
-                // console.log('register');
-
-
                 const Fetchdata = async () => {
                     try {
                         const res = await register(payload)
-                        console.log(res);
-                        alert('Register Succesfully')
+                        if (res.status === 200) {
+                            alert('Register Succesfully')
+                        }
                     } catch (error) {
                         console.log(error);
+                        alert('Register fail')
 
                     }
 
@@ -82,10 +78,13 @@ function NewDialog({ label, openform, isOpen, isClose }) {
             const Fetchdata = async () => {
                 try {
                     const res = await login(payload)
-                    alert('Login Succesfully')
 
+                    if (res.status === 200) {
+                        alert('Login Succesfully')
+                    }
                 } catch (error) {
                     console.log(error);
+                    alert('Login fail ')
                 }
             }
             Fetchdata();
