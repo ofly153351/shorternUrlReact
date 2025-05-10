@@ -119,7 +119,7 @@ export const getHistoty = async (userId) => {
 
 export const getAllclick = async () => {
     try {
-        const response = await axios.get(`${API_URL}/getreport`, {
+        const response = await axios.get(`${API_URL}/getreports`, {
             withCredentials: true,
         });
         console.log(response.data);
