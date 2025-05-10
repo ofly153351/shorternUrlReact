@@ -25,15 +25,18 @@ function HistoryTable({ data }) {
                         data.map((row, index) => (
                             <TableRow key={index}>
                                 <TableCell>{row.beforeLink}</TableCell>
-                                <TableCell align="center"><a
-                                    href={row.afterLink}
-                                    className="text-[#A86523] hover:text-[#E9A319]"
-                                    onClick={async (e) => {
-                                        e.preventDefault();
-                                        await incrementLinkcount(row.afterLink, user.userId);
-                                        window.open(row.afterLink, '_blank');
-                                    }}
-                                />
+                                <TableCell align="center">
+                                    <a
+                                        href={row.afterLink}
+                                        className="text-[#A86523] hover:text-[#E9A319]"
+                                        onClick={async (e) => {
+                                            e.preventDefault();
+                                            await incrementLinkcount(row.afterLink, user.userId);
+                                            window.open(row.afterLink, '_blank');
+                                        }}
+                                    >
+                                        {row.afterLink}
+                                    </a>
                                 </TableCell>
                                 <TableCell align="center">{new Date(row.createdAt).toLocaleString()}</TableCell>
                                 <TableCell align="center">{row.Clicked}</TableCell>
