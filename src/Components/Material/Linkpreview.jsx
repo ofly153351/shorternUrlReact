@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Loading from './Loading';
 
 export function LinkPreview({ url }) {
     const [meta, setMeta] = useState(null);
@@ -16,15 +17,22 @@ export function LinkPreview({ url }) {
         fetchPreview();
     }, [url]);
 
-    if (!meta) return <p>Loading preview...</p>;
+    if (!meta) return <div className="flex w-full justify-center items-center"><Loading /></div>;
 
     return (
-        <div className="border p-4 rounded shadow max-w-md">
+        <div className="border p-4 rounded shadow max-w-full">
             <a href={url} target="_blank" rel="noopener noreferrer">
-                <img src={meta.image?.url} alt="Preview" className="w-full h-40 object-cover mb-2" />
-                <h2 className="text-lg font-bold">{meta.title}</h2>
-                <p className="text-sm text-gray-600">{meta.description}</p>
-                <p className="text-xs text-blue-500 mt-1">{meta.url}</p>
+                <div className='flex' >
+                    <div className='w-[60%]' >
+                        <img src={meta.image?.url} alt="Preview" className="w-[100%] h-40 object-cover mb-2" />
+                    </div>
+                    <div className='w-[50%] p-2' >
+                        <h2 className="text-md  font-bold">{meta.title}</h2>
+                        <p className="text-sm text-gray-600">{meta.description}</p>
+                    </div>
+                </div>
+
+
             </a>
         </div>
     );

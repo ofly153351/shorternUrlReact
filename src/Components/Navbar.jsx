@@ -35,7 +35,7 @@ function Navbar() {
 
 
     return (
-        <div className="fixed w-full h-16 bg-white/70 backdrop-blur-md border-[#D8AE7E] border-b-2 shadow-lg z-50">
+        <div className="fixed w-full h-16 bg-white/30 backdrop-blur-md border-[#D8AE7E] border-b-2 shadow-lg z-50">
             <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
                 <div className='font-bold text-[#A86523]' >
                     <span className='text-lg' >{title.website}</span>
