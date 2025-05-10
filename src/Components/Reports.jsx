@@ -29,11 +29,11 @@ function Reports() {
         FetchData()
     }, [])
 
-    const labelReport = [
+    const labelReport = useMemo(() => [
         { name: 'All Clicks', value: totalClicks || 0 },
         { name: 'All Links', value: totalLinks || 0 },
         { name: 'Link Today', value: totalLinksToday || 0 }
-    ];
+    ], [totalClicks, totalLinks, totalLinksToday])
 
     return (
         <div className="w-full flex justify-center items-center pb-10">
