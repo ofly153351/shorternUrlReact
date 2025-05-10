@@ -12,7 +12,7 @@ function Reports() {
     useEffect(() => {
         const FetchData = async () => {
             try {
-                const res = await getAllclick()
+                const res = await getAllclick();
                 console.log("reports", res);
                 setTotalLinksToday(res?.data?.totalLinksToday)
                 setTotlaLinks(res?.data?.totalLinks)
@@ -29,11 +29,11 @@ function Reports() {
         FetchData()
     }, [])
 
-    const labelReport = useMemo(() => [
+    const labelReport = [
         { name: 'All Clicks', value: totalClicks || 0 },
         { name: 'All Links', value: totalLinks || 0 },
         { name: 'Link Today', value: totalLinksToday || 0 }
-    ], [totalClicks, totalLinks, totalLinksToday])
+    ];
 
     return (
         <div className="w-full flex justify-center items-center pb-10">
