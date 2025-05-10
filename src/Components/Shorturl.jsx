@@ -36,38 +36,6 @@ function Shorturl() {
         fetchClickCount();
     }, [user?.userId, afterUrl]);
 
-    const handleShorten = async () => {
-        if (beforeUrl) {
-            const shortenedUrl = await shortenUrl(beforeUrl);
-
-            if (shortenedUrl) {
-                setAfterUrl(shortenedUrl);
-                setSuccess(true);
-                let payload = {
-                    userId: user.userId,
-                    beforeLink: beforeUrl,
-                    afterLink: shortenedUrl
-                }
-                // console.log(payload);
-
-                try {
-                    const Fetchdata = async () => {
-                        const res = await createShortUrl(payload)
-                        console.log(res);
-                    }
-                    Fetchdata()
-                } catch (error) {
-                    console.log(error);
-                }
-            } else {
-                setSuccess(false);
-                alert('เกิดข้อผิดพลาดในการย่อ URL');
-            }
-        } else {
-            alert('กรุณากรอก URL');
-        }
-    }
-
     const handleClickLink = async (e) => {
         e.preventDefault();
 
@@ -88,6 +56,34 @@ function Shorturl() {
         } else {
             // หากไม่มี userId ก็ให้เปิดลิงก์โดยตรง
             window.open(afterUrl, "_blank");
+        }
+    }
+
+    const handleShorten = async () => {
+        if (beforeUrl) {
+            try {
+                const shortenedUrl = await shortenUrl(beforeUrl);
+
+                if (shortenedUrl) {
+                    setAfterUrl(shortenedUrl);
+                    setSuccess(true);
+                    let payload = {
+                        userId: user.userId,
+                        beforeLink: beforeUrl,
+                        afterLink: shortenedUrl
+                    };
+
+                    const res = await createShortUrl(payload);
+                    console.log(res);
+                } else {
+                    setSuccess(false);
+                    alert('เกิดข้อผิดพลาดในการย่อ URL');
+                }
+            } catch (error) {
+                console.log('Error shortening URL:', error);
+            }
+        } else {
+            alert('กรุณากรอก URL');
         }
     }
 
