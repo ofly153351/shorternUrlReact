@@ -13,7 +13,7 @@ function Reports() {
         const FetchData = async () => {
             try {
                 const res = await getAllclick()
-                console.log("reports", res.data);
+                console.log("reports", res);
                 setTotalLinksToday(res?.data?.totalLinksToday)
                 setTotlaLinks(res?.data?.totalLinks)
                 setTotalClicks(res?.data?.totalClicks)
