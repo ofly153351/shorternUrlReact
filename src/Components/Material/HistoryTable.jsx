@@ -4,7 +4,7 @@ import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 } from '@mui/material';
 import { incrementLinkcount } from '../../Util/api';
-import { useStore } from 'zustand';
+import { useStore } from '../../useStore/useStore';
 
 function HistoryTable({ data }) {
     const { user } = useStore()
