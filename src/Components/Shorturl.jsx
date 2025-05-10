@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { createShortUrl, getAllCountThislinkclick, getCountlinkClick, incrementLinkcount, shortenUrl } from '../Util/api'
 import { QRCodeCanvas } from 'qrcode.react';
 import { useStore } from '../useStore/useStore';
+import { LinkPreview } from './Material/Linkpreview';
 
 function Shorturl() {
     const [beforeUrl, setBeforeUrl] = useState('')
@@ -69,7 +70,7 @@ function Shorturl() {
 
     const handleClickLink = async (e) => {
         e.preventDefault();
-        
+
         if (user?.userId) { // ตรวจสอบว่า user มี userId หรือไม่
             try {
                 // เรียกใช้ incrementLinkcount เพิ่มจำนวนคลิก
@@ -118,9 +119,10 @@ function Shorturl() {
 
                 {success && (
                     <div className="mt-4 space-y-2 duration-200 ">
+                        <LinkPreview url={beforeUrl} />
                         <div>
                             <span className="font-medium">Before URL:</span>{' '}
-                            <a className="text-blue-500 underline" href={beforeUrl} target="_blank" rel="noopener noreferrer">
+                            <a className="text-blue-500 underline  truncate max-w-[200px] " href={beforeUrl} target="_blank" rel="noopener noreferrer">
                                 {beforeUrl}
                             </a>
                         </div>
