@@ -4,8 +4,11 @@ import {
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 } from '@mui/material';
 import { incrementLinkcount } from '../../Util/api';
+import { useStore } from 'zustand';
 
 function HistoryTable({ data }) {
+    const { user } = useStore()
+
     return (
         <TableContainer component={Paper}>
             <Table aria-label="history table">
