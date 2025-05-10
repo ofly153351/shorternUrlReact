@@ -17,6 +17,17 @@ function Basictextfield({ label, type, onChange, name }) {
                 label={label}
                 variant="standard"
                 type={type}
+                sx={{
+                    '& label.Mui-focused': {
+                        color: '#A86523',
+                    },
+                    '& .MuiInput-underline:after': {
+                        borderBottomColor: '#A86523',
+                    },
+                    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+                        borderBottomColor: '#E9A319',
+                    }
+                }}
             />
         </Box>
     );

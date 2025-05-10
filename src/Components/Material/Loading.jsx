@@ -7,7 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 function Loading() {
     return (
         <Stack spacing={2} direction="row" alignItems="center">
-            <CircularProgress size="30px" />
+            <CircularProgress size="30px" sx={{ color: '#A86523' }} />
         </Stack>
     )
 }

@@ -120,7 +120,19 @@ function NewDialog({ label, openform, isOpen, isClose }) {
                     ))}
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleSubmit}>Agree</Button>
+                    <Button
+                        onClick={handleSubmit}
+                        variant="contained"
+                        sx={{
+                            backgroundColor: '#A86523',
+                            color: '#fff',
+                            '&:hover': {
+                                backgroundColor: '#E9A319',
+                            }
+                        }}
+                    >
+                        Agree
+                    </Button>
                 </DialogActions>
             </Dialog>
         </React.Fragment>
