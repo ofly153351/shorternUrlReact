@@ -53,7 +53,7 @@ function NewDialog({ label, openform, isOpen, isClose }) {
                 const Fetchdata = async () => {
                     try {
                         const res = await register(payload)
-                        if (res.status === 200) {
+                        if (res.status === 201) {
                             alert('Register Succesfully')
                         }
                     } catch (error) {
