@@ -21,16 +21,7 @@ export default function AccountMenu() {
     const [myHistory, setMyHistory] = useState([])
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await getHistoty(user.userId)
-                setMyHistory(res || [])
-            } catch (error) {
-                console.log(error);
 
-            }
-        }
-        fetchData()
     }, [])
 
 
@@ -48,6 +39,16 @@ export default function AccountMenu() {
     };
 
     const handleOpenHistory = () => {
+        const fetchData = async () => {
+            try {
+                const res = await getHistoty(user.userId)
+                setMyHistory(res || [])
+            } catch (error) {
+                console.log(error);
+
+            }
+        }
+        fetchData()
         setOpenHistory(true); // Open the History Dialog
         handleClose(); // Close the menu
     };
@@ -125,7 +126,6 @@ export default function AccountMenu() {
                 </MenuItem>
             </Menu>
 
-            {/* Pass the openHistory state and handler to the HistoryDialog */}
             <HistoryDialog
                 data={myHistory}
                 label="My History"
