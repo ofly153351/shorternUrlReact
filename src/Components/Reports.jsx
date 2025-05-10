@@ -37,7 +37,7 @@ function Reports() {
 
     return (
         <div className="w-full flex justify-center items-center pb-10">
-            <div className="w-full md:flex justify-around items-center max-w-xl bg-white rounded-lg shadow-lg p-2 sm:grid sm:grid-cols-2 xs:gap-2">
+            <div className="w-full md:grid grid-cols-2 gap-2 justify-around items-center max-w-xl bg-white rounded-lg shadow-lg p-2">
                 {LoadingReport ? (
                     <div><Loading /></div>
                 ) : (
