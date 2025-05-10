@@ -13,7 +13,7 @@ function Reports() {
         const FetchData = async () => {
             try {
                 const res = await getAllclick()
-                console.log("reports", res?.data || []);
+                console.log("reports", res.data);
                 setTotalLinksToday(res?.data?.totalLinksToday)
                 setTotlaLinks(res?.data?.totalLinks)
                 setTotalClicks(res?.data?.totalClicks)
@@ -39,7 +39,7 @@ function Reports() {
         <div className="w-full flex justify-center items-center pb-10">
             <div className="w-full flex justify-around items-center max-w-xl bg-white rounded-lg shadow-lg p-2">
                 {LoadingReport ? (
-                    <div><Loading /></div> // Or a spinner, or any other indicator
+                    <div><Loading /></div>
                 ) : (
                     labelReport.map((item, index) => (
                         <ReportsCard key={index} label={item.name} data={item.value} />
