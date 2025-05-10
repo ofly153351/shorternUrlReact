@@ -32,14 +32,20 @@ export const login = async (payload) => {
         console.error("Register error:", error?.response?.data || error.message);
     }
 }
-
 export const shortenUrl = async (longUrl) => {
     try {
-        const response = await axios.get(`https://tinyurl.com/api-create.php?url=${longUrl}`);
-        console.log(`Shortened URL:`, response.data);
-        return response.data;
+        const response = await axios.get(`https://api.shrtco.de/v2/shorten?url=${longUrl}`);
+
+        if (response.data.ok) {
+            console.log(`Shortened URL:`, response.data.result.full_short_link);
+            return response.data.result.full_short_link;
+        } else {
+            console.error('Error from API:', response.data.error);
+            return null;
+        }
     } catch (error) {
-        console.error(`Error shortening the URL:`, error);
+        console.error('Error shortening the URL:', error);
+        return null;
     }
 };
 
