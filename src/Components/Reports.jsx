@@ -4,9 +4,9 @@ import { getAllclick } from '../Util/api';
 import Loading from './Material/Loading';
 
 function Reports() {
-    const [totalClicks, setTotalClicks] = useState('')
-    const [totalLinks, setTotlaLinks] = useState('')
-    const [totalLinksToday, setTotalLinksToday] = useState('')
+    const [totalClicks, setTotalClicks] = useState(0)
+    const [totalLinks, setTotlaLinks] = useState(0)
+    const [totalLinksToday, setTotalLinksToday] = useState(0)
     const [LoadingReport, setLoadingReport] = useState(true)
 
     useEffect(() => {

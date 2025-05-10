@@ -1,7 +1,6 @@
 import React from 'react'
 
 function ReportsCard({ label, data }) {
-    console.log(data);
 
     return (
 
