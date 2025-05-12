@@ -15,7 +15,7 @@ export const useStore = create(
       clearUser: () => set({ user: null }),
     }),
     {
-      name: 'user-storage', // ชื่อ key ใน localStorage
+      name: 'user-storage', 
     }
   )
 );

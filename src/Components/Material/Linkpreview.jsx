@@ -26,13 +26,11 @@ export function LinkPreview({ url }) {
                     <div className='w-[60%]' >
                         <img src={meta.image?.url} alt="Preview" className="w-[100%] h-40 object-cover mb-2" />
                     </div>
-                    <div className='w-[50%] p-2' >
+                    <div className='w-[50%] p-2 flex flex-wrap' >
                         <h2 className="text-md  font-bold">{meta.title}</h2>
                         <p className="text-sm text-gray-600">{meta.description}</p>
                     </div>
                 </div>
-
-
             </a>
         </div>
     );
